@@ -41,4 +41,15 @@ public class Product {
         return Objects.equals(id, product.id);
     }
 
+    public @Size(min = 1, max = 100) String getName() {
+        return name;
+    }
+
+    public @Max(1_000_000) @Min(0) Integer getPrice() {
+        return price;
+    }
+
+    public @Max(9_999) @Min(0) Integer getAmount() {
+        return amount;
+    }
 }
