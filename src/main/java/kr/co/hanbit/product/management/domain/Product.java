@@ -24,6 +24,18 @@ public class Product {
         this.id = id;
     }
 
+    public void setName(@Size(min = 1, max = 100) String name) {
+        this.name = name;
+    }
+
+    public void setPrice(@Max(1_000_000) @Min(0) Integer price) {
+        this.price = price;
+    }
+
+    public void setAmount(@Max(9_999) @Min(0) Integer amount) {
+        this.amount = amount;
+    }
+
     public Boolean sameId(Long id) {
         return this.id.equals(id);
     }
@@ -51,5 +63,9 @@ public class Product {
 
     public @Max(9_999) @Min(0) Integer getAmount() {
         return amount;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
