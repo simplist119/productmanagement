@@ -4,6 +4,7 @@ import kr.co.hanbit.product.management.domain.EntityNotFoundException;
 import kr.co.hanbit.product.management.domain.Product;
 import kr.co.hanbit.product.management.domain.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -20,6 +21,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
+@Profile("prod")
 public class DatabaseProductRepository implements ProductRepository {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
